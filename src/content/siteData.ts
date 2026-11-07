@@ -9,15 +9,33 @@
  * - Operating Hours: 11:00 AM – 11:00 PM Daily
  */
 
+import { restaurantMenuItems } from './restaurantMenuData';
+import { coffeeBarItems } from './coffeeBarData';
+
 export interface MenuItem {
   id: string;
   name: string;
-  category: 'starters' | 'main-course' | 'indian' | 'chinese' | 'pizza-fastfood' | 'beverages' | 'desserts';
+  category: string;
   categoryLabel: string;
+  subCategory?: string;
+  price: number;
+  priceFormatted: string;
   description: string;
   dietary: 'veg' | 'jain-available' | 'chef-special';
   badge?: string;
-  priceNote?: string;
+  image?: string;
+}
+
+export interface CoffeeItem {
+  id: string;
+  name: string;
+  category: string;
+  categoryLabel: string;
+  price: number;
+  priceFormatted: string;
+  description: string;
+  badge?: string;
+  image?: string;
 }
 
 export interface BakeryItem {
@@ -104,117 +122,12 @@ export const siteData = {
     { label: 'Contact', href: '#contact' },
   ],
 
-  // Verified & Curated Menu based on Megham's Rooftop Restaurant offerings
-  menu: [
-    {
-      id: 'm1',
-      name: 'Paneer Malai Tikka Sizzler',
-      category: 'starters',
-      categoryLabel: 'Starters & Appetizers',
-      description: 'Velvety cottage cheese marinated in hung curd, green cardamom, and rich cashews, char-grilled to golden perfection and served sizzling with mint chutney.',
-      dietary: 'chef-special',
-      badge: "Chef's Signature",
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm2',
-      name: 'Crispy Corn & Water Chestnut Pepper Fry',
-      category: 'starters',
-      categoryLabel: 'Starters & Appetizers',
-      description: 'Sweet golden corn and crunchy chestnuts tossed with spring onions, crushed black pepper, and fragrant cilantro.',
-      dietary: 'veg',
-      badge: 'Popular',
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm3',
-      name: 'Tandoori Stuffed Soya Chaap',
-      category: 'starters',
-      categoryLabel: 'Starters & Appetizers',
-      description: 'Slow-marinated soya chaap filled with seasoned paneer mince and herbs, roasted in a traditional clay oven with house spices.',
-      dietary: 'veg',
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm4',
-      name: 'Dal Megham Special (Slow Simmered)',
-      category: 'indian',
-      categoryLabel: 'Indian Cuisine',
-      description: 'Our iconic signature black lentils simmered overnight over slow charcoal with organic butter, cream, and sun-ripened plum tomatoes.',
-      dietary: 'chef-special',
-      badge: 'House Specialty',
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm5',
-      name: 'Paneer Lababdar & Butter Garlic Naan',
-      category: 'indian',
-      categoryLabel: 'Indian Cuisine',
-      description: 'Fresh artisanal cottage cheese cooked in a rich, chunky tomato-onion gravy scented with royal shahi jeera and finished with fresh cream.',
-      dietary: 'jain-available',
-      badge: 'Guest Favourite',
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm6',
-      name: 'Subz Dum Handi Biryani',
-      category: 'main-course',
-      categoryLabel: 'Main Course',
-      description: 'Long-grain aged basmati rice layered with garden vegetables, saffron milk, fresh mint, and whole warm spices, sealed in a traditional clay pot.',
-      dietary: 'veg',
-      badge: 'Royal Dum',
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm7',
-      name: 'Chilli Paneer & Fried Rice Bowl',
-      category: 'chinese',
-      categoryLabel: 'Chinese Cuisine',
-      description: 'Crispy cottage cheese tossed in smoky wok sauces with bell peppers and spring greens, served with fragrant wok-tossed vegetable fried rice.',
-      dietary: 'veg',
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm8',
-      name: 'Crispy Honey Chilli Lotus Stem & Momos',
-      category: 'chinese',
-      categoryLabel: 'Chinese Cuisine',
-      description: 'Thinly sliced lotus stems crisped and glazed in toasted sesame honey chilli sauce, accompanied by steamed Himalayan dumplings.',
-      dietary: 'veg',
-      badge: 'Rooftop Best Seller',
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm9',
-      name: 'Megham Supreme Hand-Stretched Pizza',
-      category: 'pizza-fastfood',
-      categoryLabel: 'Pizza & Fast Food',
-      description: 'Artisanal thin-crust base crowned with san marzano tomato sauce, mozzarella, bell peppers, golden corn, black olives, and fresh basil.',
-      dietary: 'veg',
-      badge: 'Wood-Fired Style',
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm10',
-      name: 'Sunset Sky Cooler & Mint Mojito',
-      category: 'beverages',
-      categoryLabel: 'Beverages',
-      description: 'Handcrafted signature rooftop cooler with fresh crushed garden mint, citrus lime, passionfruit essence, and sparkling bubbles.',
-      dietary: 'veg',
-      badge: 'Signature Mocktail',
-      priceNote: 'Available on Order',
-    },
-    {
-      id: 'm11',
-      name: 'Saffron Pistachio Kulfi & Brownie Sizzler',
-      category: 'desserts',
-      categoryLabel: 'Desserts',
-      description: 'Warm fudgy chocolate brownie drizzled with rich Belgian hot fudge, topped with hand-churned saffron pistachio ice cream.',
-      dietary: 'veg',
-      badge: 'Must Try',
-      priceNote: 'Available on Order',
-    },
-  ] as MenuItem[],
+  // Verified & Curated Authentic Menu from Megham's Official Catalog
+  menu: restaurantMenuItems,
+
+  // Megham Coffee Bar & Artisanal Brews
+  coffeeBar: coffeeBarItems,
+
 
   // Megham Bakery & Cake Studio Catalog
   bakery: [

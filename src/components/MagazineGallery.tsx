@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Sparkles, Instagram, ExternalLink, Heart, X, ZoomIn } from 'lucide-react';
-import { siteData } from '../content/siteData';
 
 interface GalleryItem {
   id: string;
@@ -15,6 +14,7 @@ interface GalleryItem {
   instagramUrl: string;
   quoteTag?: string;
   bgTone: string;
+  image?: string;
 }
 
 export const MagazineGallery: React.FC = () => {
@@ -29,15 +29,91 @@ export const MagazineGallery: React.FC = () => {
       title: 'Twilight Over Haridwar',
       editorialSubtitle: 'The Open Sky Sanctuary',
       caption: 'When dusk settles over the city, the rooftop comes alive with soft amber lights, fresh mountain breezes, and the gentle chatter of celebratory gatherings.',
-      date: 'October 2024',
+      date: 'Rooftop Ambience',
       aspect: 'wide',
-      likes: '1.4k',
+      likes: '2.4k',
       instagramUrl: 'https://www.instagram.com/meghamrestaurant/',
       quoteTag: 'Rooftop Ambience',
       bgTone: 'bg-deep-espresso text-cream',
+      image: '/images/food/megham_table_setup.jpg',
     },
     {
       id: 'g2',
+      category: 'food',
+      categoryLabel: 'Food & Signature Dishes',
+      title: 'The Royal Paneer Malai Sizzler',
+      editorialSubtitle: 'Tandoor Heritage',
+      caption: 'Sizzling hot cottage cheese marinated in hung curd, green cardamom, and toasted nuts, served on a smoking wooden platter with fresh garden dips.',
+      date: 'Signature Sizzler',
+      aspect: 'editorial-square',
+      likes: '1.8k',
+      instagramUrl: 'https://www.instagram.com/meghamrestaurant/',
+      quoteTag: 'Chef Signature',
+      bgTone: 'bg-creamy-white text-espresso',
+      image: '/images/food/megham_paneer_sizzler.jpg',
+    },
+    {
+      id: 'g3',
+      category: 'food',
+      categoryLabel: 'Food & Signature Dishes',
+      title: 'Dal Makhani & Naan Feast',
+      editorialSubtitle: 'Slow Charcoal Dum',
+      caption: 'Whole black lentils simmered overnight over slow charcoal embers with organic white butter, dairy cream, and piping hot garlic butter naans.',
+      date: 'Indian Heritage',
+      aspect: 'wide',
+      likes: '2.1k',
+      instagramUrl: 'https://www.instagram.com/meghamrestaurant/',
+      quoteTag: 'Slow Simmered',
+      bgTone: 'bg-chocolate-brown text-cream',
+      image: '/images/food/megham_dal_makhani.jpg',
+    },
+    {
+      id: 'g4',
+      category: 'food',
+      categoryLabel: 'Food & Signature Dishes',
+      title: 'Steaming Crystal Dimsums',
+      editorialSubtitle: 'Handcrafted Asian',
+      caption: 'Steaming hot crystal dumplings and momos served in bamboo steamers with artisanal chilli dips against our evening rooftop ambience.',
+      date: 'Asian Special',
+      aspect: 'editorial-square',
+      likes: '1.6k',
+      instagramUrl: 'https://www.instagram.com/meghamrestaurant/',
+      quoteTag: 'Artisanal Dimsums',
+      bgTone: 'bg-warm-beige text-espresso',
+      image: '/images/food/megham_dimsum_starters.jpg',
+    },
+    {
+      id: 'g5',
+      category: 'food',
+      categoryLabel: 'Food & Signature Dishes',
+      title: 'Wood-Fired Artisanal Pizza',
+      editorialSubtitle: 'Gourmet Crust',
+      caption: 'Charred blistered crust, melted fresh mozzarella, and sweet basil leaves served hot on a dark rustic board at your rooftop table.',
+      date: 'Artisan Pizza',
+      aspect: 'wide',
+      likes: '1.5k',
+      instagramUrl: 'https://www.instagram.com/meghamrestaurant/',
+      quoteTag: 'Hand-Stretched',
+      bgTone: 'bg-deep-espresso text-cream',
+      image: '/images/food/megham_artisan_pizza.jpg',
+    },
+    {
+      id: 'g6',
+      category: 'food',
+      categoryLabel: 'Food & Signature Dishes',
+      title: 'Megham Artisanal Coffee Bar',
+      editorialSubtitle: 'Specialty Brews',
+      caption: '100% Arabica estate roasts, layered strawberry matcha, and iced Vietnamese cold brews crafted under open skies.',
+      date: 'Coffee Bar',
+      aspect: 'tall',
+      likes: '1.9k',
+      instagramUrl: 'https://www.instagram.com/meghamrestaurant/',
+      quoteTag: 'Coffee & Matcha',
+      bgTone: 'bg-chocolate-brown text-cream',
+      image: '/images/food/megham_coffee_bar.jpg',
+    },
+    {
+      id: 'g7',
       category: 'bakery',
       categoryLabel: 'Bakery & Desserts',
       title: 'The Belgian Truffle Architecture',
@@ -51,7 +127,7 @@ export const MagazineGallery: React.FC = () => {
       bgTone: 'bg-chocolate-brown text-cream',
     },
     {
-      id: 'g3',
+      id: 'g8',
       category: 'celebrations',
       categoryLabel: 'Celebrations',
       title: 'A Golden Birthday Under Fairy Lights',
@@ -65,21 +141,7 @@ export const MagazineGallery: React.FC = () => {
       bgTone: 'bg-warm-beige text-espresso',
     },
     {
-      id: 'g4',
-      category: 'food',
-      categoryLabel: 'Food & Signature Dishes',
-      title: 'The Royal Paneer Malai Sizzler',
-      editorialSubtitle: 'Tandoor Heritage',
-      caption: 'Sizzling hot cottage cheese marinated in hung curd, green cardamom, and toasted nuts, served on a smoking wooden platter with fresh garden dips.',
-      date: 'Featured Menu',
-      aspect: 'editorial-square',
-      likes: '1.1k',
-      instagramUrl: 'https://www.instagram.com/meghamrestaurant/',
-      quoteTag: 'Chef Signature',
-      bgTone: 'bg-creamy-white text-espresso',
-    },
-    {
-      id: 'g5',
+      id: 'g9',
       category: 'celebrations',
       categoryLabel: 'Celebrations',
       title: 'Candlelight & Rose Petal Evenings',
@@ -91,20 +153,6 @@ export const MagazineGallery: React.FC = () => {
       instagramUrl: 'https://www.instagram.com/meghamrestaurant/',
       quoteTag: 'Anniversary Special',
       bgTone: 'bg-deep-espresso text-cream',
-    },
-    {
-      id: 'g6',
-      category: 'bakery',
-      categoryLabel: 'Bakery & Desserts',
-      title: 'The Lotus Biscoff Seduction',
-      editorialSubtitle: 'Sweet Decadence',
-      caption: 'Slow-baked New York cheesecake layered with spiced caramelized speculoos cookie crunch and glossy molten spread.',
-      date: 'Pastry Counter',
-      aspect: 'wide',
-      likes: '850',
-      instagramUrl: 'https://www.instagram.com/meghamrestaurant/',
-      quoteTag: 'House Specialty',
-      bgTone: 'bg-warm-beige text-espresso',
     },
   ];
 
@@ -138,7 +186,7 @@ export const MagazineGallery: React.FC = () => {
           </h2>
           <div className="w-16 h-0.5 bg-gold mx-auto" />
           <p className="text-sm sm:text-base text-chocolate/80 leading-relaxed font-light">
-            Designed like a luxury food & hospitality magazine. Real stories, celebration setups, and culinary creations curated directly from our official Instagram chronicle.
+            Real dishes, rooftop setups, and culinary creations photographed in Megham's ambient restaurant setting.
           </p>
         </div>
 
@@ -197,20 +245,30 @@ export const MagazineGallery: React.FC = () => {
                 </div>
 
                 {/* Inner Framed Content Area (Stylized Picture Window) */}
-                <div className="relative my-4 rounded-xl border border-gold/30 p-5 bg-black/10 backdrop-blur-sm overflow-hidden min-h-[160px] flex flex-col justify-between">
-                  <div className="flex justify-between items-center text-[10px] uppercase tracking-wider opacity-70">
-                    <span>Frame #{item.id.toUpperCase()}</span>
-                    <span className="flex items-center gap-1 text-gold">
+                <div className="relative my-4 rounded-xl border border-gold/30 p-5 bg-black/10 backdrop-blur-sm overflow-hidden min-h-[180px] flex flex-col justify-between">
+                  {item.image && (
+                    <>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-deep-espresso/90 via-deep-espresso/40 to-deep-espresso/60 pointer-events-none" />
+                    </>
+                  )}
+                  <div className="relative z-10 flex justify-between items-center text-[10px] uppercase tracking-wider opacity-90 text-cream">
+                    <span className="bg-deep-espresso/60 px-2 py-0.5 rounded-full border border-gold/30">Frame #{item.id.toUpperCase()}</span>
+                    <span className="flex items-center gap-1 text-gold bg-deep-espresso/60 px-2 py-0.5 rounded-full border border-gold/30">
                       <Heart className="w-3 h-3 fill-gold" />
                       {item.likes}
                     </span>
                   </div>
 
-                  <p className="font-serif text-sm italic my-3 leading-relaxed opacity-95">
+                  <p className="relative z-10 font-serif text-sm italic my-3 leading-relaxed opacity-95 text-cream line-clamp-3">
                     "{item.caption}"
                   </p>
 
-                  <div className="flex items-center justify-between text-[11px] pt-2 border-t border-current/10 opacity-80">
+                  <div className="relative z-10 flex items-center justify-between text-[11px] pt-2 border-t border-white/20 text-warm-beige">
                     <span>@meghamrestaurant</span>
                     <span className="inline-flex items-center gap-1 text-gold font-semibold group-hover:translate-x-1 transition-transform">
                       <ZoomIn className="w-3.5 h-3.5" />
@@ -269,6 +327,17 @@ export const MagazineGallery: React.FC = () => {
               <h3 className="font-serif text-3xl font-bold text-espresso">
                 {activeModalItem.title}
               </h3>
+
+              {/* Modal Image if available */}
+              {activeModalItem.image && (
+                <div className="relative aspect-video rounded-xl overflow-hidden border border-gold/40">
+                  <img
+                    src={activeModalItem.image}
+                    alt={activeModalItem.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
 
               <div className="p-6 rounded-xl bg-beige/40 border border-gold/40 text-chocolate">
                 <p className="font-serif italic text-lg leading-relaxed text-espresso">

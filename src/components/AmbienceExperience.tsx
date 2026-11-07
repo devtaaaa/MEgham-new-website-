@@ -69,6 +69,39 @@ export const AmbienceExperience: React.FC = () => {
           })}
         </div>
 
+        {/* Authentic Ambience Showcase Banner */}
+        <div className="mt-14 relative rounded-editorial-lg overflow-hidden border border-gold/40 shadow-luxury group">
+          <div className="relative aspect-[21/9] min-h-[300px]">
+            <img
+              src="/images/food/megham_table_setup.jpg"
+              alt="Megham Rooftop Restaurant Dining Setup"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-deep-espresso via-deep-espresso/30 to-deep-espresso/40 pointer-events-none" />
+
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 z-10 text-cream">
+              <div className="space-y-1.5 max-w-xl">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-gold bg-deep-espresso/80 backdrop-blur-sm px-3 py-1 rounded-full border border-gold/40">
+                  Megham Restaurant & Rooftop
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold">
+                  Contemporary Elegance Under An Open Sky
+                </h3>
+                <p className="text-xs sm:text-sm text-warm-beige/90 font-light">
+                  Dark marble tables, warm ambient glow, and fine vegetarian gastronomy perched atop Haridwar.
+                </p>
+              </div>
+
+              <a
+                href="/gallery"
+                className="px-6 py-2.5 rounded-full bg-gold hover:bg-caramel text-deep-espresso text-xs font-semibold uppercase tracking-wider transition-all shadow-md whitespace-nowrap"
+              >
+                View Full Gallery →
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

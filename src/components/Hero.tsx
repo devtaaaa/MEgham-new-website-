@@ -159,32 +159,39 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
 
                 {/* Media Showcase Window (Framed Luxury View of Rooftop Ambience & Patisserie) */}
-                <div className="relative my-3 rounded-xl overflow-hidden aspect-[4/5] bg-deep-espresso flex flex-col justify-between p-6 border border-gold/20 shadow-inner group">
+                <div className="relative my-3 rounded-xl overflow-hidden aspect-[4/5] bg-deep-espresso flex flex-col justify-between p-6 border border-gold/30 shadow-inner group">
                   
-                  {/* Subtle Background Artistry Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-espresso via-deep-espresso/60 to-transparent" />
+                  {/* Real Ambient Restaurant Food Photography */}
+                  <img
+                    src="/images/food/megham_paneer_sizzler.jpg"
+                    alt="Megham Rooftop Sizzler Experience"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+
+                  {/* Gradient overlays for crystal clear text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep-espresso via-deep-espresso/40 to-deep-espresso/60 pointer-events-none" />
                   
                   {/* Floating Tags */}
                   <div className="relative z-10 flex justify-between items-start">
-                    <span className="px-3 py-1 rounded-full bg-deep-espresso/80 border border-gold/40 text-[10px] font-semibold tracking-wider uppercase text-gold">
-                      Rooftop Magic
+                    <span className="px-3 py-1 rounded-full bg-deep-espresso/80 backdrop-blur-sm border border-gold/40 text-[10px] font-semibold tracking-wider uppercase text-gold">
+                      Rooftop Sizzler
                     </span>
-                    <span className="px-2.5 py-1 rounded-full bg-deep-espresso/80 text-[10px] text-cream flex items-center gap-1">
+                    <span className="px-2.5 py-1 rounded-full bg-deep-espresso/80 backdrop-blur-sm text-[10px] text-cream flex items-center gap-1 border border-white/10">
                       <Heart className="w-3 h-3 text-red-400 fill-red-400" />
-                      1.5k+
+                      1.8k+
                     </span>
                   </div>
 
                   {/* Centered Editorial Art */}
-                  <div className="relative z-10 text-center my-auto px-4 py-6 border border-gold/30 rounded-lg bg-deep-espresso/60 backdrop-blur-sm">
-                    <span className="font-serif italic text-gold text-lg block mb-1">
-                      The Megham Experience
+                  <div className="relative z-10 text-center my-auto px-4 py-4 border border-gold/40 rounded-lg bg-deep-espresso/70 backdrop-blur-md">
+                    <span className="font-serif italic text-gold text-sm block mb-1">
+                      Chef's Signature Experience
                     </span>
-                    <p className="font-serif text-2xl font-bold text-cream tracking-tight">
-                      Open Skies, Warm Feasts & Sweet Celebrations
+                    <p className="font-serif text-xl sm:text-2xl font-bold text-cream tracking-tight">
+                      Open Skies, Warm Feasts & Sizzling Delicacies
                     </p>
-                    <p className="text-xs text-warm-beige/80 mt-2 font-light">
-                      Extracting authentic moments daily from our Instagram feed.
+                    <p className="text-xs text-warm-beige/90 mt-1.5 font-light">
+                      Freshly prepared pure-veg delicacies under Haridwar's night sky.
                     </p>
                   </div>
 

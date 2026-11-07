@@ -74,11 +74,65 @@ export const PhotoFramePlaceholder: React.FC<PhotoFramePlaceholderProps> = ({
             </button>
           </div>
         ) : photoUrl ? (
-          <img
-            src={photoUrl}
-            alt={title}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+          <>
+            <img
+              src={photoUrl}
+              alt={title}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            {/* Dark gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-deep-espresso/90 via-deep-espresso/30 to-deep-espresso/50 pointer-events-none" />
+
+            {/* Frame Top Meta */}
+            <div className="relative z-10 flex items-center justify-between text-xs">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-cream bg-deep-espresso/70 backdrop-blur-sm px-2.5 py-1 rounded-full border border-gold/40 shadow-xs">
+                {category}
+              </span>
+              <span className="text-[10px] text-warm-beige flex items-center gap-1 font-serif italic bg-deep-espresso/60 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                {isReel ? <Film className="w-3 h-3 text-gold" /> : <Sparkles className="w-3 h-3 text-gold" />}
+                {isReel ? 'Instagram Reel' : 'Featured Post'}
+              </span>
+            </div>
+
+            {/* Center Play button if reel */}
+            {isReel && (
+              <div className="relative z-10 my-auto text-center">
+                <a
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-deep-espresso/80 border border-gold/60 text-gold flex items-center justify-center mx-auto shadow-gold-glow group-hover:scale-110 group-hover:bg-gold group-hover:text-deep-espresso transition-all duration-300"
+                  title="Watch Reel on Instagram"
+                >
+                  <Play className="w-5 h-5 ml-0.5 fill-current" />
+                </a>
+              </div>
+            )}
+
+            {/* Frame Bottom Bar */}
+            <div className="relative z-10 pt-2 border-t border-white/20 text-[10px] text-cream flex items-center justify-between">
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 font-semibold text-gold hover:text-white transition"
+              >
+                <Instagram className="w-3 h-3" />
+                <span>{instagramTag}</span>
+              </a>
+
+              <div className="flex items-center gap-2.5">
+                <span className="flex items-center gap-0.5 text-gold font-medium">
+                  <Heart className="w-3 h-3 fill-gold" />
+                  {likes}
+                </span>
+                <span className="flex items-center gap-0.5 text-warm-beige">
+                  <MessageCircle className="w-3 h-3" />
+                  {comments}
+                </span>
+              </div>
+            </div>
+          </>
         ) : (
           <>
             {/* Subtle luxury pattern watermark */}

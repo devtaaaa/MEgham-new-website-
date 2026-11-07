@@ -24,90 +24,95 @@ export const GalleryPage: React.FC = () => {
         {/* Curated Magazine Exhibition */}
         <MagazineGallery />
 
-        {/* Additional Editorial Photo Grid Spaces */}
+        {/* Additional Editorial Photo Grid Spaces with Real Ambience Photography */}
         <div className="space-y-8 pt-8 border-t border-beige">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-xs uppercase tracking-widest text-caramel font-semibold">
-              Archival Frames
+              Archival Frames & Kitchen Highlights
             </span>
             <h3 className="font-serif text-3xl font-bold text-espresso">
               More Moments From The Rooftop
             </h3>
             <p className="text-xs sm:text-sm text-chocolate/80 font-light">
-              Spaces prepared for continuous visual updates and new Instagram stories.
+              Captured against Megham's dark marble tables, ambient candlelight, and open Haridwar sky.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <PhotoFramePlaceholder
-              title="Sunset Horizon Table"
+              title="Sunset Horizon Table Setup"
               category="Ambience"
-              caption="From golden hour to starry nights ✨ When twilight settles over Haridwar, there is no place quite like the Megham terrace."
+              caption="From golden hour to starry nights ✨ Contemporary marble table setup under the open sky at Megham terrace."
               aspectRatio="wide"
-              likes="1.4k"
-              comments="92"
+              photoUrl="/images/food/megham_table_setup.jpg"
+              likes="2.5k"
+              comments="110"
               tags={['#RooftopDining', '#SunsetHaridwar', '#MeghamRooftop']}
               isReel={true}
               instagramUrl="https://www.instagram.com/meghamrestaurant/"
-              date="Sunset Reel"
+              date="Sunset Feature"
             />
             <PhotoFramePlaceholder
-              title="Chocolate Truffle Sculpting"
-              category="Bakery Craft"
-              caption="Straight from the Megham Bakery studio 🎂 Rich Belgian cocoa ganache whipped to velvety perfection and finished with handcrafted chocolate truffles."
-              aspectRatio="wide"
-              likes="1.1k"
-              comments="78"
-              tags={['#ArtisanBakery', '#CakeArt', '#MeghamBakery']}
-              isReel={true}
-              instagramUrl="https://www.instagram.com/meghamrestaurant/"
-              date="Bakery Reel"
-            />
-            <PhotoFramePlaceholder
-              title="Birthday Sparkler Moment"
-              category="Celebrations"
-              caption="Seeing these priceless smiles is why we love what we do! Complete birthday setup with custom pastel balloon arches and sparkler cake entry."
-              aspectRatio="wide"
-              likes="1.8k"
-              comments="145"
-              tags={['#BirthdayCelebration', '#PartySetup', '#MeghamCelebrations']}
-              isReel={true}
-              instagramUrl="https://www.instagram.com/meghamrestaurant/"
-              date="Party Reel"
-            />
-            <PhotoFramePlaceholder
-              title="Clay Tandoor Charcoal Heritage"
+              title="Clay Tandoor Sizzler Platter"
               category="Kitchen Craft"
-              caption="The sizzle you can hear from across the rooftop! ♨️ Melt-in-your-mouth paneer cubes marinated in rich malai, cardamom, and roasted spices."
+              caption="The sizzle you can hear from across the rooftop! ♨️ Paneer Malai Tikka Sizzler with bell peppers and fresh mint dip."
               aspectRatio="wide"
-              likes="960"
-              comments="58"
+              photoUrl="/images/food/megham_paneer_sizzler.jpg"
+              likes="1.8k"
+              comments="82"
               tags={['#TandoorHeritage', '#PaneerTikka', '#MeghamFood']}
               instagramUrl="https://www.instagram.com/meghamrestaurant/"
               date="Food Spotlight"
             />
             <PhotoFramePlaceholder
-              title="Handcrafted Mocktail Bar"
-              category="Rooftop Coolers"
-              caption="Handcrafted signature rooftop cooler with fresh crushed garden mint, citrus lime, passionfruit essence, and sparkling bubbles."
+              title="Dal Makhani & Naan Feast"
+              category="Slow Charcoal Dum"
+              caption="Slow-simmered whole black lentils, golden butter garlic naan, and aged basmati pulao in warm candlelight."
               aspectRatio="wide"
-              likes="880"
-              comments="42"
-              tags={['#Mocktails', '#SunsetVibes', '#HaridwarCafe']}
+              photoUrl="/images/food/megham_dal_makhani.jpg"
+              likes="2.1k"
+              comments="94"
+              tags={['#DalMakhani', '#RoyalFlavours', '#MeghamDining']}
               instagramUrl="https://www.instagram.com/meghamrestaurant/"
-              date="Beverage Feature"
+              date="Heritage Spotlight"
             />
             <PhotoFramePlaceholder
-              title="Evening Candlelight Path"
-              category="Romantic Dinners"
-              caption="Candlelight, open breezes, and the one who matters most ❤️ Treat your partner to an intimate romantic evening in our private rooftop gazebo."
+              title="Steaming Crystal Dimsums"
+              category="Asian Delicacies"
+              caption="Steaming hot crystal dumplings served in bamboo steamers with fiery chilli oil dip against evening lights."
               aspectRatio="wide"
-              likes="2.4k"
-              comments="180"
-              tags={['#AnniversaryGoals', '#CandlelightDinner', '#MeghamRomance']}
+              photoUrl="/images/food/megham_dimsum_starters.jpg"
+              likes="1.6k"
+              comments="74"
+              tags={['#Dimsums', '#Momos', '#AsianDelights']}
               isReel={true}
               instagramUrl="https://www.instagram.com/meghamrestaurant/"
-              date="Romantic Reel"
+              date="Dimsum Reel"
+            />
+            <PhotoFramePlaceholder
+              title="Wood-Fired Artisanal Pizza"
+              category="Gourmet Crust"
+              caption="Fresh mozzarella, charred crust, and sweet basil leaves on a rustic slate board with rooftop view."
+              aspectRatio="wide"
+              photoUrl="/images/food/megham_artisan_pizza.jpg"
+              likes="1.9k"
+              comments="68"
+              tags={['#ArtisanPizza', '#HandStretched', '#MeghamCafe']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Pizza Spotlight"
+            />
+            <PhotoFramePlaceholder
+              title="Megham Artisanal Coffee Bar"
+              category="Specialty Brews"
+              caption="100% Arabica roasts, manual pour overs, layered strawberry matcha, and iced Vietnamese cold brews."
+              aspectRatio="wide"
+              photoUrl="/images/food/megham_coffee_bar.jpg"
+              likes="2.2k"
+              comments="88"
+              tags={['#MeghamCoffeeBar', '#MatchaCloud', '#HaridwarCafe']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Coffee Reel"
             />
           </div>
         </div>
