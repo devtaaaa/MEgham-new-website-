@@ -64,26 +64,47 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenReservation }) => {
             <PhotoFramePlaceholder
               title="Paneer Malai Tikka Sizzler"
               category="Tandoor Starters"
-              caption="Smoking hot platter with mint chutney and fresh lime."
+              caption="The sizzle you can hear from across the rooftop! ♨️ Melt-in-your-mouth cottage cheese cubes slow-marinated in cardamom and rich cashew paste."
               aspectRatio="square"
+              likes="960"
+              comments="58"
+              tags={['#PaneerTikka', '#TandooriSizzler', '#MeghamFood']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Chef Special"
             />
             <PhotoFramePlaceholder
-              title="Dal Megham Special"
-              category="Slow Simmered"
-              caption="Overnight charcoal-simmered black lentils with churned butter."
+              title="Dal Megham Slow-Simmered"
+              category="Slow Charcoal Dum"
+              caption="Our iconic signature black lentils simmered overnight over slow charcoal with organic butter, cream, and sun-ripened plum tomatoes."
               aspectRatio="square"
+              likes="1.3k"
+              comments="65"
+              tags={['#DalMegham', '#PureVegetarian', '#FamilyDining']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Signature Dish"
             />
             <PhotoFramePlaceholder
-              title="Hand-Stretched Pizza"
-              category="Artisan Cafe"
-              caption="Thin crust topped with mozzarella, basil, and olives."
+              title="Steaming Hot Tandoori Momos"
+              category="Trending Starters"
+              caption="Steaming hot, crispy outside, packed with flavors inside! 🔥 Our Chef Special Tandoori Momos tossed in house schezwan glaze."
               aspectRatio="square"
+              likes="1.6k"
+              comments="115"
+              tags={['#MomosLover', '#StreetFoodLuxury', '#Sizzlers']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Food Reel"
             />
             <PhotoFramePlaceholder
-              title="Sunset Sky Mocktail"
+              title="Sunset Sky Passionfruit Cooler"
               category="Rooftop Coolers"
-              caption="Handcrafted passionfruit, fresh mint, and sparkling bubbles."
+              caption="Handcrafted signature rooftop cooler with fresh crushed garden mint, citrus lime, passionfruit essence, and sparkling bubbles."
               aspectRatio="square"
+              likes="880"
+              comments="42"
+              tags={['#Mocktails', '#SunsetVibes', '#HaridwarCafe']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Cooler Feature"
             />
           </div>
         </div>

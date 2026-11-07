@@ -42,38 +42,72 @@ export const GalleryPage: React.FC = () => {
             <PhotoFramePlaceholder
               title="Sunset Horizon Table"
               category="Ambience"
-              caption="Golden skies greeting diners on the open rooftop terrace."
+              caption="From golden hour to starry nights ✨ When twilight settles over Haridwar, there is no place quite like the Megham terrace."
               aspectRatio="wide"
+              likes="1.4k"
+              comments="92"
+              tags={['#RooftopDining', '#SunsetHaridwar', '#MeghamRooftop']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Sunset Reel"
             />
             <PhotoFramePlaceholder
               title="Chocolate Truffle Sculpting"
-              category="Bakery"
-              caption="Handcrafting decadent truffles and celebration tiers."
+              category="Bakery Craft"
+              caption="Straight from the Megham Bakery studio 🎂 Rich Belgian cocoa ganache whipped to velvety perfection and finished with handcrafted chocolate truffles."
               aspectRatio="wide"
+              likes="1.1k"
+              comments="78"
+              tags={['#ArtisanBakery', '#CakeArt', '#MeghamBakery']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Bakery Reel"
             />
             <PhotoFramePlaceholder
               title="Birthday Sparkler Moment"
               category="Celebrations"
-              caption="Joyous smiles as candles are blown under fairy lights."
+              caption="Seeing these priceless smiles is why we love what we do! Complete birthday setup with custom pastel balloon arches and sparkler cake entry."
               aspectRatio="wide"
+              likes="1.8k"
+              comments="145"
+              tags={['#BirthdayCelebration', '#PartySetup', '#MeghamCelebrations']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Party Reel"
             />
             <PhotoFramePlaceholder
-              title="Clay Tandoor Roasting"
-              category="Kitchen"
-              caption="Traditional clay oven producing fragrant naan and malai tikka."
+              title="Clay Tandoor Charcoal Heritage"
+              category="Kitchen Craft"
+              caption="The sizzle you can hear from across the rooftop! ♨️ Melt-in-your-mouth paneer cubes marinated in rich malai, cardamom, and roasted spices."
               aspectRatio="wide"
+              likes="960"
+              comments="58"
+              tags={['#TandoorHeritage', '#PaneerTikka', '#MeghamFood']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Food Spotlight"
             />
             <PhotoFramePlaceholder
-              title="Mocktail Shaking Bar"
-              category="Beverages"
-              caption="Handcrafted syrups and crushed citrus coolers."
+              title="Handcrafted Mocktail Bar"
+              category="Rooftop Coolers"
+              caption="Handcrafted signature rooftop cooler with fresh crushed garden mint, citrus lime, passionfruit essence, and sparkling bubbles."
               aspectRatio="wide"
+              likes="880"
+              comments="42"
+              tags={['#Mocktails', '#SunsetVibes', '#HaridwarCafe']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Beverage Feature"
             />
             <PhotoFramePlaceholder
               title="Evening Candlelight Path"
               category="Romantic Dinners"
-              caption="Rose petal walkway leading to private gazebo dining."
+              caption="Candlelight, open breezes, and the one who matters most ❤️ Treat your partner to an intimate romantic evening in our private rooftop gazebo."
               aspectRatio="wide"
+              likes="2.4k"
+              comments="180"
+              tags={['#AnniversaryGoals', '#CandlelightDinner', '#MeghamRomance']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Romantic Reel"
             />
           </div>
         </div>

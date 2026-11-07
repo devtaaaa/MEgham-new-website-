@@ -88,8 +88,14 @@ export const BakeryPage: React.FC<BakeryPageProps> = ({ onOpenCakeModal }) => {
               <PhotoFramePlaceholder
                 title="Bespoke Floral Celebration Cake"
                 category="Patisserie Atelier"
-                caption="Two-tier anniversary cake with edible gold leaf and fresh pastel florets."
+                caption="Straight from the Megham Bakery studio 🎂 Two-tier anniversary floral cake with edible gold foil, soft pastel buttercream textures, and handcrafted chocolate truffles."
                 aspectRatio="portrait"
+                likes="1.5k"
+                comments="84"
+                tags={['#CustomCakes', '#CakeArt', '#MeghamBakery']}
+                isReel={true}
+                instagramUrl="https://www.instagram.com/meghamrestaurant/"
+                date="Couture Cake"
               />
             </div>
 
@@ -100,13 +106,13 @@ export const BakeryPage: React.FC<BakeryPageProps> = ({ onOpenCakeModal }) => {
         <div className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-xs uppercase tracking-widest text-caramel font-semibold">
-              Patisserie Portfolio
+              Live Patisserie Chronicle
             </span>
             <h3 className="font-serif text-3xl font-bold text-espresso">
               Featured Cake Styles & Desserts
             </h3>
             <p className="text-xs sm:text-sm text-chocolate/80 font-light">
-              Spaces for real photographs of our baked creations and celebratory desserts.
+              Crafted fresh for birthdays, anniversaries, and luxury sweet gifting.
             </p>
           </div>
 
@@ -114,26 +120,47 @@ export const BakeryPage: React.FC<BakeryPageProps> = ({ onOpenCakeModal }) => {
             <PhotoFramePlaceholder
               title="Belgian Dark Truffle Cake"
               category="Birthday Cakes"
-              caption="Ultra-rich dark cocoa ganache layered with moist sponge."
+              caption="Ultra-rich 70% Belgian cocoa ganache layered between moist cocoa sponge and finished with handmade truffles. 100% pure vegetarian!"
               aspectRatio="square"
+              likes="1.1k"
+              comments="78"
+              tags={['#BelgianTruffle', '#BirthdayCake', '#HaridwarCakes']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Bestseller Reel"
             />
             <PhotoFramePlaceholder
-              title="Lotus Biscoff Cheesecake"
+              title="Lotus Biscoff Dream Cheesecake"
               category="Pastries"
-              caption="Creamy New York cheesecake smothered in speculoos glaze."
+              caption="Slow-baked New York style cheesecake crowned with molten Lotus Biscoff glaze and crunchy speculoos cookie crust. Available daily at the patisserie counter."
               aspectRatio="square"
+              likes="870"
+              comments="44"
+              tags={['#BiscoffCheesecake', '#ArtisanPastry', '#DessertLovers']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Pastry Daily"
             />
             <PhotoFramePlaceholder
               title="Fresh Fruit Summer Gateau"
               category="Celebration Cakes"
-              caption="Light vanilla sponge with seasonal kiwis, berries, and peaches."
+              caption="Light airy vanilla sponge layered with whipped mascarpone cream and fresh seasonal kiwis, berries, and sun-ripened peaches."
               aspectRatio="square"
+              likes="950"
+              comments="52"
+              tags={['#FreshFruitCake', '#EgglessBaking', '#MeghamBakery']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Seasonal Special"
             />
             <PhotoFramePlaceholder
               title="Luxury Festive Gifting Hamper"
               category="Artisan Gifting"
-              caption="Handcrafted cocoa truffles, almond florentines, and gourmet jars."
+              caption="Handcrafted artisanal chocolates, almond florentines, dry fruit cookies, and celebration greeting cards in a luxury keepsake box."
               aspectRatio="square"
+              likes="1.2k"
+              comments="60"
+              tags={['#FestiveHampers', '#LuxuryGifting', '#DiwaliHampers']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Gifting Hamper"
             />
           </div>
         </div>

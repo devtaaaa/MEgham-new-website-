@@ -79,28 +79,52 @@ export const InstagramPage: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <PhotoFramePlaceholder
-              title="Sunset Golden Hour Reel"
-              category="Reel Preview"
-              caption="Live rooftop sunset vibes captured in 9:16 vertical motion."
+              title="Sunset Golden Hour Transition"
+              category="Ambience Reel"
+              caption="From golden hour to starry nights ✨ When the evening breeze sweeps across Haridwar and fairy lights turn on, Megham transforms into pure rooftop magic."
               aspectRatio="tall"
+              likes="1.4k"
+              comments="92"
+              tags={['#MeghamHaridwar', '#RooftopCafe', '#SunsetSky']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Sunset Reel"
             />
             <PhotoFramePlaceholder
-              title="Chocolate Frosting ASMR"
+              title="Belgian Truffle Cake Frosting"
               category="Bakery Reel"
-              caption="Behind the scenes frosting of our Belgian truffle gateau."
+              caption="Straight from the Megham Bakery studio 🎂 Rich Belgian cocoa ganache whipped to velvety perfection and finished with handcrafted chocolate truffles."
               aspectRatio="tall"
+              likes="1.1k"
+              comments="78"
+              tags={['#ArtisanBakery', '#CakeArt', '#MeghamBakery']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Bakery Reel"
             />
             <PhotoFramePlaceholder
               title="Surprise Birthday Reaction"
               category="Celebration Reel"
-              caption="Priceless smiles as sparklers illuminate the rooftop table."
+              caption="Seeing these priceless smiles is why we love what we do! Complete birthday setup with custom pastel balloon arches and sparkler cake entry."
               aspectRatio="tall"
+              likes="1.8k"
+              comments="145"
+              tags={['#BirthdayCelebration', '#PartySetup', '#MeghamCelebrations']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Party Reel"
             />
             <PhotoFramePlaceholder
-              title="Sizzler Steam & Plating"
+              title="Sizzler Momos Steam & Plating"
               category="Food Reel"
-              caption="Hot tandoori platters sizzling on their way to the table."
+              caption="Steaming hot, crispy outside, packed with flavors inside! 🔥 Our Chef Special Tandoori Momos tossed in house schezwan glaze."
               aspectRatio="tall"
+              likes="1.6k"
+              comments="115"
+              tags={['#MomosLover', '#StreetFoodLuxury', '#Sizzlers']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Food Reel"
             />
           </div>
         </div>

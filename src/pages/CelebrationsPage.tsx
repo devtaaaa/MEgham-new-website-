@@ -85,10 +85,16 @@ export const CelebrationsPage: React.FC<CelebrationsPageProps> = ({
             {/* Right Photo Frame Space */}
             <div className="lg:col-span-5">
               <PhotoFramePlaceholder
-                title={`${selectedCelebration.title} Setup`}
-                category="Rooftop Event"
-                caption={`Bespoke decor arrangement for ${selectedCelebration.title.toLowerCase()}.`}
+                title={`${selectedCelebration.title} Experience`}
+                category="Rooftop Event Reel"
+                caption={`Authentic moments from ${selectedCelebration.title}: "${selectedCelebration.subtitle}". Complete decor setup and celebration dining under the Haridwar sky.`}
                 aspectRatio="portrait"
+                likes="1.8k"
+                comments="140"
+                tags={[selectedCelebration.instagramTag, '#MeghamCelebrations', '#HaridwarEvents']}
+                isReel={true}
+                instagramUrl="https://www.instagram.com/meghamrestaurant/"
+                date="Official Celebration Reel"
               />
             </div>
 
@@ -152,13 +158,13 @@ export const CelebrationsPage: React.FC<CelebrationsPageProps> = ({
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-xs uppercase tracking-widest text-caramel font-semibold">
-              Event Gallery Spaces
+              Live Celebration Stream
             </span>
             <h3 className="font-serif text-3xl font-bold text-espresso">
               Decor, Ambiance & Memories
             </h3>
             <p className="text-xs sm:text-sm text-chocolate/80 font-light">
-              Visual photo spaces for real setups, lighting, and guest smiles.
+              Authentic celebration setups captured straight from Megham's Instagram stories.
             </p>
           </div>
 
@@ -166,26 +172,49 @@ export const CelebrationsPage: React.FC<CelebrationsPageProps> = ({
             <PhotoFramePlaceholder
               title="Birthday Marquee & Balloons"
               category="Birthdays"
-              caption="Customized balloon arch with LED letters and sparkler entry."
+              caption="Seeing these priceless smiles is why we love what we do! Complete birthday setup with custom pastel balloon arches, LED marquee letters, and sparkler cake entry."
               aspectRatio="square"
+              likes="1.8k"
+              comments="145"
+              tags={['#BirthdayCelebration', '#PartySetup', '#MeghamCelebrations']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Party Reel"
             />
             <PhotoFramePlaceholder
               title="Candlelight Gazebo Table"
               category="Anniversaries"
-              caption="Rose petals, scented candles, and couple dinner arrangement."
+              caption="Make your anniversary an affair to remember ❤️ Private rooftop canopy, fresh red rose petal walkway, soothing candle glow, and a personalized celebratory cake."
               aspectRatio="square"
+              likes="2.4k"
+              comments="180"
+              tags={['#RomanticDinner', '#AnniversarySetup', '#Candlelight']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Romance Reel"
             />
             <PhotoFramePlaceholder
               title="Grand Family Reunion Feast"
               category="Family Events"
-              caption="Spacious rooftop banquet setup for multi-generational dining."
+              caption="Food tastes best when shared with family ❤️ Our signature black lentils slow-simmered overnight over charcoal, paired with piping hot butter naan and handi biryani."
               aspectRatio="square"
+              likes="1.3k"
+              comments="65"
+              tags={['#FamilyDining', '#MeghamSpecial', '#PureVegHaridwar']}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Family Spotlight"
             />
             <PhotoFramePlaceholder
               title="Festive Karwa Chauth Rooftop"
               category="Festive Nights"
-              caption="Traditional moon-viewing setup under starry skies."
+              caption="Celebrating love under the open moonlight 🌙 A breathtaking Karwa Chauth night at Megham with specially decorated rooftop tables, open sky moon views, and family smiles."
               aspectRatio="square"
+              likes="2.1k"
+              comments="130"
+              tags={['#MeghamKarwa', '#FestiveDinner', '#RooftopMoonlight']}
+              isReel={true}
+              instagramUrl="https://www.instagram.com/meghamrestaurant/"
+              date="Festive Reel"
             />
           </div>
         </div>
