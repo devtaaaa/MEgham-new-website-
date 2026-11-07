@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Calendar, Instagram } from 'lucide-react';
+import { Menu, X, Phone, Calendar, Instagram, Sparkles, ChevronRight } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 import { siteData } from '../content/siteData';
 
@@ -16,9 +16,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation, onOpenCelebra
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -33,119 +33,103 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation, onOpenCelebra
     { label: 'Contact', path: '/contact' },
   ];
 
-  const isHomePage = location.pathname === '/';
-
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled || !isHomePage
-            ? 'bg-cream/95 luxury-blur shadow-luxury py-3 border-b border-beige/60'
-            : 'bg-gradient-to-b from-espresso/80 via-espresso/40 to-transparent py-4 text-cream'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="flex items-center group">
-              <BrandLogo
-                variant={isScrolled || !isHomePage ? 'dark' : 'light'}
-                size="md"
-                showTagline={!isScrolled && isHomePage}
-              />
-            </Link>
+      {/* Floating Side-Curved Glass Navigation Bar */}
+      <header className="fixed top-2.5 sm:top-4 md:top-5 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8 flex justify-center pointer-events-none transition-all duration-300">
+        <div
+          className={`pointer-events-auto w-full max-w-7xl h-16 sm:h-[70px] md:h-[72px] rounded-full px-4 sm:px-6 lg:px-7 flex items-center justify-between gap-2 lg:gap-4 transition-all duration-500 ${
+            isScrolled
+              ? 'bg-[#18110c]/90 border-gold/45 shadow-[0_12px_45px_rgba(0,0,0,0.6)] backdrop-blur-2xl'
+              : 'bg-deep-espresso/80 border-gold/30 shadow-[0_10px_35px_rgba(0,0,0,0.45)] backdrop-blur-xl'
+          } border ring-1 ring-white/10`}
+        >
+          {/* 1. Left: Brand Logo (Properly Aligned & Vertically Centered) */}
+          <Link
+            to="/"
+            className="flex items-center group shrink-0 py-1 transition-transform duration-300 hover:scale-[1.02]"
+            aria-label="Megham Home"
+          >
+            <BrandLogo variant="light" size="md" showTagline={true} />
+          </Link>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-7">
-              {navLinks.map((link) => {
-                const isActive = location.pathname === link.path;
-                return (
-                  <Link
-                    key={link.label}
-                    to={link.path}
-                    className={`text-xs uppercase tracking-widest font-medium transition-all relative py-1 ${
-                      isActive
-                        ? 'text-gold font-bold after:w-full'
-                        : isScrolled || !isHomePage
-                        ? 'text-espresso/90 hover:text-gold'
-                        : 'text-cream/90 hover:text-gold'
-                    } after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:bg-gold hover:after:w-full after:transition-all after:duration-300 ${
-                      isActive ? 'after:w-full' : 'after:w-0'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </nav>
+          {/* 2. Center: Desktop Navigation Links (Properly Spaced & Aligned) */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 2xl:gap-2">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.label}
+                  to={link.path}
+                  className={`relative px-3 xl:px-3.5 py-1.5 rounded-full text-[11px] xl:text-xs uppercase tracking-wider font-semibold transition-all duration-300 whitespace-nowrap ${
+                    isActive
+                      ? 'text-gold bg-gold/15 border border-gold/40 shadow-[0_0_12px_rgba(197,164,109,0.2)] font-bold'
+                      : 'text-cream/80 hover:text-gold hover:bg-white/5 border border-transparent'
+                  }`}
+                >
+                  <span>{link.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
 
-            {/* Action Buttons */}
-            <div className="hidden sm:flex items-center space-x-3">
-              <button
-                onClick={onOpenCelebration}
-                className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full border transition-all duration-300 ${
-                  isScrolled || !isHomePage
-                    ? 'border-caramel/40 text-chocolate hover:bg-beige/40'
-                    : 'border-gold/50 text-cream hover:bg-cream/10'
-                }`}
-              >
-                Plan Celebration
-              </button>
+          {/* 3. Right: Action Buttons (Curved Pills & Vertical Alignment) */}
+          <div className="flex items-center gap-2 sm:gap-2.5 xl:gap-3 shrink-0">
+            {/* Plan Celebration Outline Pill */}
+            <button
+              onClick={onOpenCelebration}
+              className="hidden sm:inline-flex items-center justify-center text-[11px] xl:text-xs uppercase tracking-wider font-semibold px-4 xl:px-4.5 py-2 rounded-full border border-gold/45 hover:border-gold text-cream hover:text-gold hover:bg-gold/10 transition-all duration-300 shadow-xs whitespace-nowrap"
+            >
+              Plan Celebration
+            </button>
 
-              <button
-                onClick={onOpenReservation}
-                className="flex items-center gap-2 text-xs uppercase tracking-wider font-semibold px-5 py-2.5 rounded-full bg-gold hover:bg-caramel text-espresso transition-all duration-300 shadow-md hover:shadow-gold-glow hover:-translate-y-0.5"
-              >
-                <Calendar className="w-3.5 h-3.5" />
-                <span>Book a Table</span>
-              </button>
-            </div>
+            {/* Book A Table Radiant Gold Pill */}
+            <button
+              onClick={onOpenReservation}
+              className="inline-flex items-center justify-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-gold via-[#d4b47e] to-gold hover:opacity-95 text-deep-espresso transition-all duration-300 shadow-md hover:shadow-gold-glow hover:-translate-y-0.5 whitespace-nowrap"
+            >
+              <Calendar className="w-3.5 h-3.5" />
+              <span>Book a Table</span>
+            </button>
 
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden flex items-center space-x-2">
-              <button
-                onClick={onOpenReservation}
-                className="sm:hidden text-xs font-semibold px-3 py-1.5 rounded-full bg-gold text-espresso"
-              >
-                Book Table
-              </button>
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className={`p-2 rounded-xl transition ${
-                  isScrolled || !isHomePage
-                    ? 'text-espresso hover:bg-beige/40'
-                    : 'text-cream hover:bg-cream/10'
-                }`}
-                aria-label="Toggle Navigation Menu"
-              >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
+            {/* Mobile Hamburger Toggle Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-full text-cream/90 hover:text-gold hover:bg-white/10 border border-gold/30 transition-all"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5 text-gold" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Drawer Menu */}
+      {/* Floating Side-Curved Glass Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden">
+        <div className="fixed inset-0 z-50 lg:hidden px-4 pt-24 pb-8 flex justify-center animate-fade-in">
+          {/* Backdrop Blur Overlay */}
           <div
-            className="fixed inset-0 bg-espresso/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/70 backdrop-blur-md"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="fixed right-0 top-0 bottom-0 w-4/5 max-w-sm bg-cream p-6 shadow-2xl flex flex-col justify-between overflow-y-auto border-l border-gold/30">
+
+          {/* Glass Drawer Card with Side Curves */}
+          <div className="relative z-10 w-full max-w-md bg-[#18110c]/95 backdrop-blur-2xl border border-gold/40 rounded-3xl p-6 shadow-2xl flex flex-col justify-between overflow-y-auto max-h-[82vh] ring-1 ring-white/10 text-cream">
             <div>
-              <div className="flex items-center justify-between pb-6 border-b border-beige">
-                <BrandLogo variant="dark" size="sm" showTagline={false} />
+              {/* Header inside mobile drawer */}
+              <div className="flex items-center justify-between pb-4 border-b border-gold/25">
+                <BrandLogo variant="light" size="sm" showTagline={true} />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-full text-chocolate hover:bg-beige/50"
+                  className="p-2 rounded-full text-warm-beige hover:text-gold hover:bg-white/10 border border-gold/25"
                   aria-label="Close Navigation Menu"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <nav className="mt-6 flex flex-col space-y-4">
+              {/* Navigation Links List */}
+              <nav className="mt-5 flex flex-col space-y-1.5">
                 {navLinks.map((link) => {
                   const isActive = location.pathname === link.path;
                   return (
@@ -153,40 +137,46 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation, onOpenCelebra
                       key={link.label}
                       to={link.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`text-base font-serif font-medium transition py-1 border-b border-beige/40 flex items-center justify-between ${
-                        isActive ? 'text-caramel font-bold' : 'text-espresso hover:text-caramel'
+                      className={`px-4 py-2.5 rounded-full text-sm font-serif transition-all flex items-center justify-between ${
+                        isActive
+                          ? 'bg-gold/20 text-gold font-bold border border-gold/40'
+                          : 'text-warm-beige hover:text-gold hover:bg-white/5'
                       }`}
                     >
-                      <span>{link.label}</span>
-                      <span className="text-xs text-caramel">→</span>
+                      <span className="tracking-wide">{link.label}</span>
+                      <ChevronRight className={`w-4 h-4 ${isActive ? 'text-gold' : 'text-warm-beige/40'}`} />
                     </Link>
                   );
                 })}
               </nav>
             </div>
 
-            <div className="pt-6 border-t border-beige space-y-3">
+            {/* Mobile Footer CTAs & Contact */}
+            <div className="pt-5 mt-6 border-t border-gold/25 space-y-3">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenReservation();
                 }}
-                className="w-full py-3 bg-espresso text-cream font-medium text-sm rounded-xl flex items-center justify-center gap-2 shadow-luxury"
+                className="w-full py-3 rounded-full bg-gradient-to-r from-gold via-[#d4b47e] to-gold text-deep-espresso font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-gold-glow"
               >
-                <Calendar className="w-4 h-4 text-gold" />
-                <span>Book a Table</span>
+                <Calendar className="w-4 h-4" />
+                <span>Reserve a Table</span>
               </button>
+
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenCelebration();
                 }}
-                className="w-full py-3 border border-caramel text-chocolate font-medium text-sm rounded-xl flex items-center justify-center gap-2 hover:bg-beige/30"
+                className="w-full py-2.5 rounded-full border border-gold/50 text-cream hover:bg-gold/10 font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
               >
+                <Sparkles className="w-3.5 h-3.5 text-gold" />
                 <span>Plan Your Celebration</span>
               </button>
-              <div className="flex items-center justify-between text-xs text-chocolate/80 pt-2">
-                <a href={`tel:${siteData.brand.phone}`} className="flex items-center gap-1.5 hover:text-espresso">
+
+              <div className="flex items-center justify-between text-xs text-warm-beige/80 pt-2 px-1">
+                <a href={`tel:${siteData.brand.phone}`} className="flex items-center gap-1.5 hover:text-gold">
                   <Phone className="w-3.5 h-3.5 text-gold" />
                   <span>{siteData.brand.phoneFormatted}</span>
                 </a>
@@ -194,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation, onOpenCelebra
                   href={siteData.brand.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-caramel hover:text-espresso"
+                  className="flex items-center gap-1.5 text-gold hover:text-cream"
                 >
                   <Instagram className="w-3.5 h-3.5" />
                   <span>@{siteData.brand.instagramHandle}</span>
